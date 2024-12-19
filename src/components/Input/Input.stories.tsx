@@ -84,6 +84,10 @@ const meta: Meta<typeof Input> = {
             control: 'boolean',
             description: 'Используется ли кольцо при фокусе',
         },
+        register: {
+            control: 'object',
+            description: 'Регистрация поля ввода для формы react-hook-form',
+        },
     },
 };
 

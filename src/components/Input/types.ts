@@ -1,4 +1,5 @@
 import React from 'react';
+import { UseFormRegister } from 'react-hook-form';
 
 export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {
     // Основные пропсы
@@ -27,4 +28,6 @@ export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElem
 
     focusColor?: string;
     ringOnFocus?: boolean;
+
+    register?: ReturnType<UseFormRegister<any>>;
 } 
