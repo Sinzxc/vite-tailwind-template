@@ -9,7 +9,6 @@ export interface SelectOption {
 export interface SelectProps extends Omit<React.SelectHTMLAttributes<HTMLSelectElement>, 'size'> {
     // Основные пропсы
     label?: string;
-    options: SelectOption[];
     error?: string;
     hint?: string;
     size?: 'small' | 'medium' | 'large';
@@ -17,7 +16,6 @@ export interface SelectProps extends Omit<React.SelectHTMLAttributes<HTMLSelectE
     placeholder?: string;
     register?: ReturnType<UseFormRegister<any>>;
     classNames?: string;
-
 
     // Стилизация
     fullWidth?: boolean;
@@ -31,4 +29,7 @@ export interface SelectProps extends Omit<React.SelectHTMLAttributes<HTMLSelectE
     floatingLabel?: boolean;
     focusColor?: string;
     ringOnFocus?: boolean;
+
+    // Делаем options опциональным
+    options?: (SelectOption | string | number)[];
 } 

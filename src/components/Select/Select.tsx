@@ -79,11 +79,20 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(({
                                 {placeholder}
                             </option>
                         )}
-                        {options.map((option) => (
-                            <option key={option.value} value={option.value}>
-                                {option.label}
-                            </option>
-                        ))}
+                        {options ? options.map((option) => {
+                            if (typeof option === 'object' && 'value' in option && 'label' in option) {
+                                return (
+                                    <option key={option.value} value={option.value}>
+                                        {option.label}
+                                    </option>
+                                );
+                            }
+                            return (
+                                <option key={option} value={option}>
+                                    {option}
+                                </option>
+                            );
+                        }) : props.children}
                     </select>
 
                     {/* Кастомная стрелка */}
