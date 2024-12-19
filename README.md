@@ -1,50 +1,62 @@
-# React + TypeScript + Vite
+# Your UI Kit
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React UI Kit with Tailwind CSS.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🎨 Built with Tailwind CSS
+- 📦 Tree-shakeable exports
+- 💪 Written in TypeScript
+- 🎭 Storybook documentation
+- ⚡ Powered by Vite
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+npm install @your-org/ui-kit
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Usage
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+1. Add the UI Kit's Tailwind preset to your `tailwind.config.js`:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```javascript
+module.exports = {
+  content: [
+    ***
+    './node_modules/@sinzxc/ots-ui-kit/dist/**/*.js',
+  ],
+  // ... your config
+}
+```
+
+2. Import and use components:
+
+```jsx
+import { Button } from '@your-org/ui-kit'
+
+function App() {
+  return (
+    <Button variant="primary">
+      Click me!
+    </Button>
+  )
+}
+```
+
+## Documentation
+
+Visit our Storybook documentation at [link-to-your-storybook]
+
+## Available Components
+
+- `Button` - Versatile button component with multiple variants and states
+- `ErrorBoundary` - React error boundary for graceful error handling
+
+## Documentation
+
+For detailed documentation and examples, run the Storybook locally:
+
+```bash
+npm run storybook
 ```
